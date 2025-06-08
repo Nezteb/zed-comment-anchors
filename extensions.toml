@@ -1,0 +1,18 @@
+# https://zed.dev/docs/extensions/developing-extensions#webassembly
+id = "comment-anchors"
+name = "Comment Anchors"
+version = "0.0.1"
+schema_version = 1
+authors = ["Noah Betzen <noah@nezteb.net>"]
+description = "Inspired by a similar extension for VS Code: https://github.com/StarlaneStudios/vscode-comment-anchors"
+repository = "https://github.com/Nezteb/zed-comment-anchors"
+
+# TODO: Impelement
+[slash_commands.set-comment-anchors]
+description = "Changes the default keywords to set anchors for"
+requires_argument = false
+
+# TODO: Implement
+[slash_commands.find-comment-anchors]
+description = "Searches for all comment anchors in the current project"
+requires_argument = false

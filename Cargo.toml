@@ -1,0 +1,17 @@
+# https://zed.dev/docs/extensions/developing-extensions#webassembly
+[package]
+name = "zed-comment-anchors"
+version = "0.1.0"
+edition.workspace = true
+publish.workspace = true
+license = "Apache-2.0"
+
+[lints]
+workspace = true
+
+[lib]
+path = "src/lib.rs"
+crate-type = ["cdylib"]
+
+[dependencies]
+zed_extension_api = "0.1.0"
