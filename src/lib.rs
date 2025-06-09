@@ -1,12 +1,15 @@
 // https://zed.dev/docs/extensions/developing-extensions#webassembly
-use zed_extension_api as zed;
+use zed_extension_api::{
+    self as zed, SlashCommand, SlashCommandOutput, SlashCommandOutputSection, Worktree,
+};
 
-struct CommentAnchors {
-    // ... state
-}
+struct CommentAnchors;
 
-// https://zed.dev/docs/extensions/slash-commands#implementing-slash-command-behavior
 impl zed::Extension for CommentAnchors {
+    fn new() -> Self {
+        CommentAnchors
+    }
+
     fn run_slash_command(
         &self,
         command: SlashCommand,
@@ -52,17 +55,8 @@ impl zed::Extension for CommentAnchors {
                 })
             }
             command => Err(format!("unknown slash command: \"{command}\"")),
-        },
-        "change-comment-anchors" => {
-            // TODO: Implement the ability to change which words/patterns will be condiered
-            // "anchors". For example: "TODO", "HACK", "NOTE", "WIP", etc.
-        },
-        "find-comment-anchors" => {
-            // TODO: Impelement the ability to open a new view/tab/sidebar that shows
-            // all configured "anchors" in the project in a sortable table.
         }
     }
 }
-
 
 zed::register_extension!(CommentAnchors);
