@@ -2,6 +2,7 @@
 use zed_extension_api::{self as zed, SlashCommand, SlashCommandOutput, Worktree};
 
 mod commands;
+mod models;
 
 struct CommentAnchors;
 

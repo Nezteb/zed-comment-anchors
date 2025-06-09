@@ -1,5 +1,7 @@
 pub mod echo;
 pub mod pick_one;
+pub mod set_comment_anchors;
+pub mod find_comment_anchors;
 
 use zed_extension_api::{SlashCommand, SlashCommandOutput, Worktree};
 
@@ -7,14 +9,13 @@ use zed_extension_api::{SlashCommand, SlashCommandOutput, Worktree};
 pub fn handle_command(
     command: SlashCommand,
     args: Vec<String>,
-    _worktree: Option<&Worktree>,
+    worktree: Option<&Worktree>,
 ) -> Result<SlashCommandOutput, String> {
     match command.name.as_str() {
         "echo" => echo::handle_echo(args),
         "pick-one" => pick_one::handle_pick_one(args),
-        // TODO: Implement:
-        // "set-comment-anchors"
-        // "find-comment-anchors"
+        "set-comment-anchors" => set_comment_anchors::handle_set_comment_anchors(args),
+        "find-comment-anchors" => find_comment_anchors::handle_find_comment_anchors(args, worktree),
         unknown => Err(format!("unknown slash command: \"{unknown}\"")),
     }
 }
