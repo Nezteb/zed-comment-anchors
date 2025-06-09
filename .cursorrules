@@ -9,6 +9,6 @@
 - We'll try to implement as many features from the original as we can with Zed's extension API:
   - https://docs.rs/zed_extension_api/latest/zed_extension_api/index.html
 - Do not use any Rust dependencies that are not already defined in the project's `Cargo.toml`.
-  - Feel free to suggest new dependencies only if they are well-maintained and significantly helpful/useful for this specific project.
+  - Currently, this is only: https://docs.rs/zed_extension_api/latest/zed_extension_api/index.html
 - Format all files after any changes are made using `cargo fmt`
 - Make sure the project builds after any changes using `cargo build`

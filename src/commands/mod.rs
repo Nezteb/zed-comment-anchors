@@ -12,6 +12,9 @@ pub fn handle_command(
     match command.name.as_str() {
         "echo" => echo::handle_echo(args),
         "pick-one" => pick_one::handle_pick_one(args),
+        // TODO: Implement:
+        // "set-comment-anchors"
+        // "find-comment-anchors"
         unknown => Err(format!("unknown slash command: \"{unknown}\"")),
     }
 }
